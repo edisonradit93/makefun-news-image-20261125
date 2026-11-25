@@ -3,7 +3,7 @@ import { runPipeline } from './pipeline.ts';
 function main(): void {
   const botDir = process.env.MAKEFUN_BOT_DIR || import.meta.dirname;
   const outputDir = process.env.MAKEFUN_OUTPUT_DIR || '/output';
-  console.log(`[news-image-20261125] Starting visual pipeline (botDir=${botDir}, outputDir=${outputDir})`);
+  console.log(`[news-image-20261125] Starting visual pipeline v1.0.0 [verified-readonly] (botDir=${botDir}, outputDir=${outputDir})`);
 
   const result = runPipeline();
   console.log(
