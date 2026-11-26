@@ -44,18 +44,6 @@ export function runPipeline(): PipelineResult {
   const elapsedSec = Math.max(Number(elapsedNs) / 1_000_000_000, 1e-9);
   const throughputMBps = Number((payload.length / (1024 * 1024) / elapsedSec).toFixed(2));
 
-  const manifestPath = path.join(outputDir, 'manifest.json');
-  const manifest = {
-    competition: 'news-image-20261125',
-    format,
-    bytes: payload.length,
-    sha256,
-    durationMs: Number(durationMs.toFixed(3)),
-    throughputMBps,
-    output: 'entry.png',
-  };
-  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n', 'utf8');
-
   return {
     sourcePath,
     outputPath,
